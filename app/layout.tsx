@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./fonts.css";
+import { Analytics } from "@vercel/analytics/react";
 
 import type { Metadata } from "next";
 import Providers from "@/components/Providers";
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={work.className}>
+        <Analytics />
         <Providers>{children}</Providers>
       </body>
     </html>
