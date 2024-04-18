@@ -1,6 +1,4 @@
 import { NextRequest } from "next/server";
-import fs from "fs";
-import path from "path";
 
 import "dotenv/config";
 
@@ -63,29 +61,6 @@ export async function GET(req: NextRequest) {
       }),
       { status: 400 }
     );
-  }
-
-  const filePath = path.join(process.cwd(), "num_of_reqs.json");
-  let data;
-
-  try {
-    const rawData = fs.readFileSync(filePath, "utf8");
-    data = JSON.parse(rawData);
-  } catch (error) {
-    console.error("Error reading the file:", error);
-    return new Response(
-      JSON.stringify({ error: "Error reading request count file" }),
-      { status: 500 }
-    );
-  }
-
-  data.num_of_reqs += 1;
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-
-  if (data.num_of_reqs > 1000) {
-    return new Response(JSON.stringify({ error: "Too many requests" }), {
-      status: 429,
-    });
   }
 
   const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=5000&type=restaurant&keyword=${encodeURIComponent(

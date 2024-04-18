@@ -50,7 +50,6 @@ const DiscoverComponent: FC<DiscoverComponentProps> = ({ query, reqData }) => {
         `/api/places?q=${query}&lat=${location?.lat}&lng=${location?.lng}`
       );
       const data = await res.json();
-      console.log(data);
 
       if (data.error) {
         setError(data.error);
