@@ -23,6 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta
+        name="google-adsense-account"
+        content="ca-pub-4306335171749620"
+      ></meta>
       <body className={work.className}>
         <Analytics />
         <Providers>{children}</Providers>
