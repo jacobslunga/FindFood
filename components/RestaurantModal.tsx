@@ -290,12 +290,9 @@ const RestaurantModal = () => {
   useEffect(() => {
     if (!selectedRestaurant) return;
 
-    fetch(
-      `http://localhost:3000/api/get-place?placeId=${selectedRestaurant.place_id}`,
-      {
-        method: "GET",
-      }
-    )
+    fetch(`/api/get-place?placeId=${selectedRestaurant.place_id}`, {
+      method: "GET",
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log("Here");

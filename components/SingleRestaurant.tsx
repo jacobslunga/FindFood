@@ -58,7 +58,7 @@ const RestaurantComponent = ({
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/get-place?placeId=${placeId}`, {
+    fetch(`/api/get-place?placeId=${placeId}`, {
       method: "GET",
     })
       .then((res) => res.json())

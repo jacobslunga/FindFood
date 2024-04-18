@@ -47,7 +47,7 @@ const DiscoverComponent: FC<DiscoverComponentProps> = ({ query, reqData }) => {
 
     const fetchData = async () => {
       const res = await fetch(
-        `http://localhost:3000/api/places?q=${query}&lat=${location?.lat}&lng=${location?.lng}`
+        `/api/places?q=${query}&lat=${location?.lat}&lng=${location?.lng}`
       );
       const data = await res.json();
       console.log(data);
@@ -91,6 +91,7 @@ const DiscoverComponent: FC<DiscoverComponentProps> = ({ query, reqData }) => {
         <>
           <LeftPanel restaurants={restaurants} loading={loading} />
           <SingleRestaurant />
+          <RestaurantModal />
         </>
       )}
     </div>

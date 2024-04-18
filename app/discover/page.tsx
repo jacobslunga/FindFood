@@ -3,7 +3,6 @@ import Link from "next/link";
 import DiscoverComponent from "@/components/DiscoverComponent";
 import path from "path";
 import fs from "fs";
-import RestaurantModal from "@/components/RestaurantModal";
 
 interface DiscoverProps {
   searchParams?: { [key: string]: string | string[] | undefined };
@@ -32,7 +31,6 @@ const Discover: FC<DiscoverProps> = async ({ searchParams }) => {
   return (
     <div className="flex flex-row items-center justify-between w-screen h-screen">
       <DiscoverComponent query={searchParams.q as string} reqData={reqData} />
-      <RestaurantModal />
     </div>
   );
 };
