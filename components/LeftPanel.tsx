@@ -19,9 +19,6 @@ const LeftPanel: FC<LeftPanelProps> = ({ restaurants, loading }) => {
   const { setSelectedRestaurant } = useContext(SelectedRestaurantContext);
   const { setShowRestaurantModal } = useContext(ShowRestaurantModalContext);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [selectedOption, setSelectedOption] = useState(0);
-
-  const options = ["Toppval", "Liknande"];
 
   function formatDistance(distanceInMeters: number): string {
     if (distanceInMeters >= 1000) {

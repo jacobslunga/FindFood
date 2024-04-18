@@ -300,6 +300,8 @@ const SingleRestaurant: FC<SingleRestaurantProps> = ({}) => {
     return null;
   }
 
+  console.log(selectedRestaurant);
+
   return (
     <div className="absolute hidden md:left-[40%] md:w-[40%] lg:flex lg:left-[30%] lg:w-[50%] xl:left-[25%] min-h-screen xl:w-[55%] flex-col items-center justify-center overflow-auto">
       {selectedRestaurant === null ? (
