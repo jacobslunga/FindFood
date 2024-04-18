@@ -66,7 +66,8 @@ const HomeComponent: FC<HomeComponentProps> = ({}) => {
               FindFood AI
             </h1>
             <p className="text-sm tracking-tight font-sat-regular mt-5 text-center text-gray-600 max-w-[50%]">
-              Vad är du sugen på idag?
+              Använd AI för att hitta restauranger i närheten som serverar det
+              du är sugen på.
             </p>
           </div>
 
