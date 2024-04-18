@@ -47,16 +47,16 @@ const LeftPanel: FC<LeftPanelProps> = ({ restaurants, loading }) => {
   return (
     <div className="fixed bottom-0 left-0 z-50 flex h-screen flex-col items-start justify-start border-r border-r-[rgba(0,0,0,0.1)] bg-white py-5 w-screen md:w-[60%] lg:w-[30%] xl:w-[25%]">
       <div className="sticky top-0 flex w-full flex-row items-center justify-center bg-white px-5 md:justify-start">
-        <Link
+        <button
           onClick={() => {
             setQuery("");
             setSelectedRestaurant(null);
+            window.history.back();
           }}
-          href="/"
           className="absolute left-5 mr-5 items-center justify-center rounded-xl bg-slate-100 p-2 transition-colors duration-75 hover:bg-slate-300 md:static"
         >
           <IoArrowBack size={15} className="cursor-pointer text-black" />
-        </Link>
+        </button>
         <h1 className="select-none bg-gradient-to-br from-primary to-secondary bg-clip-text text-center font-sat-bold text-xl tracking-tighter text-transparent">
           FindFood AI
         </h1>
