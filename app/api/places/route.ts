@@ -4,7 +4,7 @@ import path from "path";
 
 import "dotenv/config";
 
-const googlePlacesApiKey = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
+const googlePlacesApiKey = process.env.GOOGLE_PLACES_API_KEY;
 
 function ranking(
   dist: number,

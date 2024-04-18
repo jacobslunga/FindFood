@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 
-const googlePlacesApiKey = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
+const googlePlacesApiKey = process.env.GOOGLE_PLACES_API_KEY;
 
 export async function GET(req: NextRequest) {
   const placeId = req.nextUrl.searchParams.get("placeId");
@@ -17,7 +17,7 @@ export async function GET(req: NextRequest) {
 
   if (!res.ok) {
     console.error(
-      `API call failed with status ${res.status} and status text ${res.statusText}`,
+      `API call failed with status ${res.status} and status text ${res.statusText}`
     );
     return new Response(
       JSON.stringify({
@@ -29,7 +29,7 @@ export async function GET(req: NextRequest) {
         headers: {
           "Content-Type": "application/json",
         },
-      },
+      }
     );
   }
 
