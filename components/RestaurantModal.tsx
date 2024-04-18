@@ -295,7 +295,6 @@ const RestaurantModal = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Here");
         setRestaurant(data.result);
       })
       .catch((err) => {
@@ -329,7 +328,7 @@ const RestaurantModal = () => {
           </button>
         </form>
 
-        {restaurant && selectedRestaurant.photoUrl && (
+        {restaurant && selectedRestaurant && (
           <RestaurantComponent
             restaurant={restaurant}
             photoUrl={selectedRestaurant.photoUrl}

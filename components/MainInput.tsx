@@ -40,6 +40,16 @@ const MainInput: FC<MainInputProps> = () => {
     router.push(`/discover?q=${query}`);
   };
 
+  const onEnter = (e: any) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  };
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("keydown", onEnter);
+  }
+
   return (
     <div className="flex border shadow-sm bg-gray-white flex-row items-center justify-between w-[80%] rounded-xl">
       <input
