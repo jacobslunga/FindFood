@@ -329,12 +329,13 @@ const RestaurantModal = () => {
           </button>
         </form>
 
-        {restaurant && (
-          <RestaurantComponent
-            restaurant={restaurant}
-            photoUrl={selectedRestaurant.photoUrl}
-          />
-        )}
+        {restaurant &&
+          selectedRestaurant.photoUrl(
+            <RestaurantComponent
+              restaurant={restaurant}
+              photoUrl={selectedRestaurant.photoUrl}
+            />
+          )}
       </div>
       <form method="dialog" className="modal-backdrop">
         <button>close</button>
